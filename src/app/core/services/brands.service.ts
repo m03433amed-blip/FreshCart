@@ -1,0 +1,22 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class BrandsService {
+  private readonly httpClient = inject(HttpClient) 
+
+
+  getAllBrands():Observable<any> {
+    return this.httpClient.get(environment.baseUrl + `/api/v1/brands`)
+  }
+  getSpecficBrand(id:string):Observable<any> {
+    return this.httpClient.get(environment.baseUrl + `/api/v1/brands/${id}`)
+  }
+  FilterProductBrand(brandId:string):Observable<any> {
+    return this.httpClient.get(environment.baseUrl + `/api/v1/products?brand=${brandId}`)
+  }
+}

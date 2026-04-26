@@ -1,0 +1,22 @@
+	.item {
+  background-image:
+    linear-gradient(to right, #00c758e6, #05df7280), url(/home-slider-1.d79601a8.png);
+  background-size: cover;
+  background-position: center;
+}
+
+swiper-container::part(button-next),swiper-container::part(button-prev){
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  font-weight: 900;
+  padding: 0px 10px;
+}
+
+swiper-container::part(bullet-active) {
+  background-color:#fff ;
+  width: 3rem;
+  height: 0.75rem;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
